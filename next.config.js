@@ -1,8 +1,19 @@
 const createNextIntlPlugin = require('next-intl/plugin');
+
 const withNextIntl = createNextIntlPlugin();
 
-const nextConfig = {
-  
-};
+module.exports = withNextIntl({
+  output: 'export',
+  generateStaticParams: async () => {
 
-module.exports = withNextIntl(nextConfig);
+    return {
+      paths: [
+        { params: { locale: 'en' } },
+        { params: { locale: 'de' } },
+    
+      ],
+      fallback: false,
+    };
+  },
+ 
+});
