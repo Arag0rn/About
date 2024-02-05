@@ -2,7 +2,7 @@ const createNextIntlPlugin = require('next-intl/plugin');
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
-  // ваша конфигурация
+  output: 'export',
 };
 
 module.exports = withNextIntl(nextConfig);
